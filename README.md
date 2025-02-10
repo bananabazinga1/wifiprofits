@@ -34,7 +34,7 @@ WiFi Profits is a new software designed to help beginners start their journey in
 <li><strong>AI content generator</strong></li>
 <li><strong>Viral video maker</strong></li>
 <li><strong>Social media sharing options</strong> (Facebook, Twitter, Reddit, Snapchat, LinkedIn, etc.)</li>
-<li><strong>Paid traffic options</strong></li>
+
 </ul>
 
 <p><strong>Bonuses and Upgrades</strong></p>
