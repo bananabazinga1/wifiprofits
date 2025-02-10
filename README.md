@@ -1,4 +1,4 @@
-# wifiprofits
+# Wifi Profits
 WiFi Profits is a new software designed to help beginners start their journey in business.
 <p><strong>WiFi Profits Review: The Ultimate Tool for Beginners to Make Money Online</strong></p>
 
