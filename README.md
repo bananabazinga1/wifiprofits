@@ -60,6 +60,5 @@ WiFi Profits is a new software designed to help beginners start their journey in
 <p>Watch the WiFi Profits Review Video below:</p>
 
 <p><strong>👉 <a href="https://www.youtube.com/watch?v=gnpOEyW4mWA">Click here to get WiFi Profits now!</a></strong></p>
-
-</iframe></p>
+</p>
 
