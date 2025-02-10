@@ -57,9 +57,9 @@ WiFi Profits is a new software designed to help beginners start their journey in
 
 <p>If you’re serious about making money with affiliate marketing, <strong>WiFi Profits</strong> is a great starting point. Grab it today and get my exclusive bonuses to accelerate your success!</p>
 
-<p><strong>👉 <a href="https://www.youtube.com/watch?v=gnpOEyW4mWA">Click here to get WiFi Profits now!</a></strong></p>
-
 <p>Watch the WiFi Profits Review Video below:</p>
 
-<p><iframe width="1280" height="720" src="https://www.youtube.com/embed/gnpOEyW4mWA" title="Wifi Profits Review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p><strong>👉 <a href="https://www.youtube.com/watch?v=gnpOEyW4mWA">Click here to get WiFi Profits now!</a></strong></p>
+
+</iframe></p>
 
