@@ -60,3 +60,57 @@ def write_email(slot: str, subject: str, html_body: str, plain_body: str) -> Non
         f.write(plain_content)
 
     logger.info("Saved: %s  |  %s", html_path, txt_path)
+
+
+def write_campaign_email(
+    slot: str,
+    day_num: int,
+    subject: str,
+    html_body: str,
+    plain_body: str,
+    campaign_dir: str,
+) -> tuple[str, str]:
+    """Write one campaign email under a pre-constructed campaign directory.
+
+    Directory layout:
+        <campaign_dir>/day_<N>/email_<slot_num>_<slot>.html
+        <campaign_dir>/day_<N>/email_<slot_num>_<slot>.txt
+
+    The campaign_dir path is computed once by the caller (campaign.py) so the
+    output root stays stable across all API calls regardless of clock drift.
+
+    Returns (html_path, txt_path) so the caller can record them in the index.
+    """
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    number = SLOT_NUMBER.get(slot, 0)
+
+    day_dir = os.path.join(campaign_dir, f"day_{day_num}")
+    os.makedirs(day_dir, exist_ok=True)
+
+    base_name = f"email_{number}_{slot}"
+    html_path = os.path.join(day_dir, f"{base_name}.html")
+    txt_path = os.path.join(day_dir, f"{base_name}.txt")
+
+    html_content = HTML_SKELETON.format(
+        subject=subject,
+        timestamp=timestamp,
+        slot=slot,
+        html_body=html_body,
+    )
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(html_content)
+
+    plain_content = (
+        PLAIN_HEADER.format(
+            timestamp=timestamp,
+            slot=slot,
+            subject=subject,
+            separator="-" * 60,
+        )
+        + plain_body
+    )
+    with open(txt_path, "w", encoding="utf-8") as f:
+        f.write(plain_content)
+
+    logger.info("Saved: %s  |  %s", html_path, txt_path)
+    return html_path, txt_path
