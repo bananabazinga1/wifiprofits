@@ -2,8 +2,11 @@
 generate_campaign.py — Batch-generate a complete promotional email campaign.
 
 Usage:
-    python generate_campaign.py --days 5
-    python generate_campaign.py --days 7
+    python generate_campaign.py --days 5 --product-copy my_product.txt
+    python generate_campaign.py --days 7 --product-copy path/to/salespage.txt
+
+If --product-copy is omitted, the value of PRODUCT_COPY_FILE in your .env is used
+(default: product_copy.txt in the project root).
 
 All emails for the entire campaign are generated in one run and saved to:
     output/campaign_<YYYY-MM-DD>_<N>days/
@@ -24,6 +27,7 @@ Press Ctrl+C to abort. Emails already written are preserved.
 
 import argparse
 import logging
+import os
 import sys
 
 
@@ -40,6 +44,16 @@ def _parse_args() -> argparse.Namespace:
         choices=[5, 7],
         metavar="{5,7}",
         help="Number of campaign days. Must be 5 or 7.",
+    )
+    parser.add_argument(
+        "--product-copy",
+        metavar="PATH",
+        default=None,
+        help=(
+            "Path to a text file containing the raw sales page copy for this campaign. "
+            "Overrides the PRODUCT_COPY_FILE env var. "
+            "Defaults to the value of PRODUCT_COPY_FILE, or 'product_copy.txt'."
+        ),
     )
     return parser.parse_args()
 
@@ -59,18 +73,23 @@ def main() -> None:
     args = _parse_args()
     _configure_logging()
 
-    # Import after logging is set up so any config errors surface cleanly.
+    # Set PRODUCT_COPY_FILE BEFORE importing settings — the singleton reads env at import time.
+    if args.product_copy:
+        os.environ["PRODUCT_COPY_FILE"] = args.product_copy
+
+    # Import after logging is set up and env vars are finalised.
     from email_generator.config import settings
     from email_generator.campaign import run_campaign
 
     total_emails = args.days * 3
 
     print("=" * 60)
-    print("WiFi Profits Campaign Generator")
+    print("Affiliate Email Campaign Generator")
     print(f"  Campaign    : {args.days}-day ({total_emails} emails total)")
     print(f"  Model       : {settings.claude_model}")
     print(f"  Affiliate   : {settings.affiliate_link}")
     print(f"  Sender name : {settings.sender_name}")
+    print(f"  Copy file   : {settings.product_copy_file}")
     print(f"  Output dir  : {settings.output_dir}/")
     print("=" * 60)
     print()

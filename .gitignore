@@ -1,5 +1,6 @@
 # Environment
 .env
+product_copy.txt
 
 # Runtime artifacts
 output/

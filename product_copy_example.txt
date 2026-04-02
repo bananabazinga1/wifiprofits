@@ -1,0 +1,58 @@
+===========================================================================
+PRODUCT COPY EXAMPLE — Replace this file with your actual sales page copy
+===========================================================================
+
+HOW TO USE:
+1. Create a file called product_copy.txt in the project root
+   (or set PRODUCT_COPY_FILE=/path/to/your/copy.txt in your .env)
+2. Paste the raw text from your product's sales page into that file
+3. For campaign mode, you can also pass it directly:
+       python generate_campaign.py --days 7 --product-copy my_product.txt
+
+The AI will read the copy and extract:
+  - Product name
+  - Core promise / headline benefit
+  - Key features and how they work
+  - Bonuses and their values
+  - Pricing and any urgency/scarcity
+  - Guarantee details
+  - Social proof / testimonials
+
+No special formatting required — plain text is fine.
+The more complete the copy, the more accurate and specific the emails will be.
+
+Each time you start a new campaign for a different product, simply point to
+a different copy file. Your other settings (affiliate link, sender name, etc.)
+stay in .env as usual.
+
+===========================================================================
+EXAMPLE COPY (delete everything from here down and replace with your own)
+===========================================================================
+
+Headline: Discover the Plug-and-Play System That Lets Complete Beginners
+          Earn Their First Online Commissions — Without a List, a Product,
+          or Any Technical Skills
+
+Sub-headline: In just a few clicks you can have a fully ready monetised
+              funnel live on the internet — even if you've never made a
+              single dollar online before.
+
+Features:
+- One-click funnel builder: pre-built, high-converting pages ready in minutes
+- Built-in offer library: 50+ proven offers pre-loaded, sorted by EPC
+- AI traffic assistant: generates ready-to-post social content and short videos
+- Newbie mode: step-by-step checklist walks you through your first campaign
+
+Bonuses (available during launch only):
+- Bonus 1: Traffic Multiplier Mini-Course ($197 value)
+- Bonus 2: Email Swipe Vault — 30 done-for-you emails ($97 value)
+- Bonus 3: Private Facebook mastermind group access
+
+Pricing: One-time payment of $27 during launch. Price increases after the
+         launch window closes.
+
+Guarantee: 30-day no-questions-asked money-back guarantee.
+
+Testimonials:
+- "Made my first $47 commission in 48 hours." — Sarah T.
+- "I had no idea what I was doing and still got results." — Mike R.
