@@ -1,0 +1,16 @@
+# Environment
+.env
+
+# Runtime artifacts
+output/
+jobs.sqlite
+email_generator.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
