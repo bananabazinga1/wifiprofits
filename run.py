@@ -13,6 +13,8 @@ Press Ctrl+C to stop.
 import logging
 import sys
 
+from keep_alive import keep_alive
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -30,6 +32,7 @@ logger = logging.getLogger(__name__)
 
 
 def main() -> None:
+    keep_alive()
     logger.info("=" * 60)
     logger.info("Daily Affiliate Email Generator starting")
     logger.info("  Model       : %s", settings.claude_model)
